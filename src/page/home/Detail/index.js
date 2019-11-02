@@ -1,4 +1,5 @@
 import React from "react";
+import sanitizeHtml from "sanitize-html";
 import './Detail.css'
 
 export default ({ detail }) =>
@@ -12,5 +13,7 @@ export default ({ detail }) =>
       มาตรการส่งเสริมการบริโภคในประเทศ
       <span className="nowrap">“ชิมช้อปใช้”</span>
     </div>
-    <div className="detail" dangerouslySetInnerHTML={{ __html: detail }} />
+    <div className="detail" dangerouslySetInnerHTML={{
+      __html: sanitizeHtml(detail, { allowedTags: ["span", "br"] })
+    }} />
   </div>
