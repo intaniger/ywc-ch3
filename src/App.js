@@ -1,26 +1,41 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from 'react';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import './App.css';
+import { Home } from "./page";
+import { Navbar } from './component';
+
+const initialContent = {
+  navbarItems: [],
+  duration: "",
+  detail: "",
+  condition: "",
 }
 
-export default App;
+export default () => {
+  const [content, setContent] = useState(initialContent)
+  const { navbarItems } = content
+
+  useEffect(() => {
+    const loadData = async () => {
+      const resp = await fetch("https://panjs.com/ywc.json")
+      setContent(await resp.json())
+    }
+    loadData()
+  }, [])
+
+
+  return <Router>
+    <Navbar items={navbarItems}>
+      <Switch>
+        <Route path="/">
+          <Home {...content} />
+        </Route>
+      </Switch>
+    </Navbar>
+  </Router>
+}

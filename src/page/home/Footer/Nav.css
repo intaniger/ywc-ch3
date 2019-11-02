@@ -1,0 +1,46 @@
+footer .nav-footer {
+  font-family: "TATSanaSuksaBold";
+  background-color: #213a8f;
+  color: #fff;
+}
+@media (max-width: 577px) {
+  footer .nav-footer {
+    padding: 15px 0px;
+  }
+}
+.nav-footer a {
+  font-size: 14px;
+  text-decoration: none;
+  color: #fff;
+}
+.nav-footer .copyright {
+  padding: 0.5rem 1rem;
+  padding-left: 0px;
+}
+
+@media (max-width: 769px) {
+  .nav-footer .copyright {
+    padding: 0.5rem 0.5rem;
+    font-size: 12px;
+  }
+}
+@media (max-width: 577px) {
+  .nav-footer .copyright {
+    padding: 0.5rem 2rem;
+  }
+}
+
+footer .nav-footer .nav {
+  float: right;
+}
+@media (max-width: 769px) {
+  footer .nav-footer .nav .nav-link {
+    padding: 0.5rem 0.5rem;
+    font-size: 12px;
+  }
+}
+@media (max-width: 577px) {
+  footer .nav-footer .nav .nav-link {
+    padding: 0.5rem 2rem;
+  }
+}
