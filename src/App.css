@@ -30,6 +30,10 @@ footer {
   font-size: 14px;
 }
 
+.full-screen {
+  width: 100vw;
+}
+
 @font-face {
   font-family: "Chonburi";
   src: url("/assets/fonts/Chonburi/Chonburi-Regular.ttf") format("truetype"),

@@ -101,20 +101,6 @@ header .header-link-mobile {
     display: block;
   }
 }
-footer .footer-2 .nav {
-  float: right;
-}
-@media (max-width: 769px) {
-  footer .footer-2 .nav .nav-link {
-    padding: 0.5rem 0.5rem;
-    font-size: 12px;
-  }
-}
-@media (max-width: 577px) {
-  footer .footer-2 .nav .nav-link {
-    padding: 0.5rem 2rem;
-  }
-}
 
 .navbar {
   background: #fff;
